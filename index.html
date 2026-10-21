@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>José Andrés Sequeira Hernández — Data / BI / Operations Analyst</title>
+<meta name="description" content="Portafolio de José Andrés Sequeira Hernández, Data/BI/Operations Analyst. Convierto datos operativos en decisiones medibles." />
+<style>
+  :root {
+    --bg: #0b1220;
+    --bg2: #101a2e;
+    --card: #16223a;
+    --card-border: #24334f;
+    --text: #e8eefc;
+    --muted: #9aa8c4;
+    --accent: #38bdf8;
+    --accent2: #22d3ee;
+    --gold: #fbbf24;
+    --green: #34d399;
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 80% -10%, #12264a 0%, var(--bg) 55%);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent2); }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 18, 32, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px; max-width: 980px; margin: 0 auto;
+  }
+  .logo { font-weight: 800; letter-spacing: 0.5px; color: var(--text); }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 22px; }
+  .nav-links a { color: var(--muted); font-size: 0.95rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* Hero */
+  header.hero { padding: 72px 0 56px; text-align: center; }
+  .avatar {
+    width: 96px; height: 96px; margin: 0 auto 22px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 1.9rem; font-weight: 800; color: #08101f;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--card-border);
+  }
+  .hero h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 800; letter-spacing: -0.5px; }
+  .hero .role {
+    display: inline-block; margin-top: 12px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: var(--accent2);
+    padding: 6px 16px; border-radius: 999px;
+    font-size: 0.95rem; font-weight: 600;
+  }
+  .hero .tagline { max-width: 640px; margin: 22px auto 0; color: var(--muted); font-size: 1.08rem; }
+  .hero .cta { margin-top: 28px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 0.98rem; transition: transform .15s ease, background .15s ease;
+  }
+  .btn-primary { background: var(--accent); color: #06121f; }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid var(--card-border); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent2); transform: translateY(-2px); }
+
+  /* Metrics strip */
+  .metrics {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px; padding: 0 0 8px;
+  }
+  .metric {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 18px 14px; text-align: center;
+  }
+  .metric .num { font-size: 1.7rem; font-weight: 800; color: var(--accent2); letter-spacing: -0.5px; }
+  .metric .label { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+
+  /* Sections */
+  section { padding: 56px 0; }
+  .section-head { margin-bottom: 30px; }
+  .section-head .kicker {
+    color: var(--accent); font-size: 0.8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+  }
+  .section-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; margin-top: 4px; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+  .about-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 26px;
+  }
+  .about-card p { color: var(--muted); }
+  .about-card p + p { margin-top: 12px; }
+  .about-card strong { color: var(--text); }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .chip {
+    background: var(--bg2); border: 1px solid var(--card-border);
+    color: var(--text); font-size: 0.82rem; font-weight: 500;
+    padding: 5px 12px; border-radius: 999px;
+  }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+  .project {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .project:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .project .icon { font-size: 1.5rem; }
+  .project h3 { font-size: 1.12rem; font-weight: 700; }
+  .project .desc { color: var(--muted); font-size: 0.94rem; flex: 1; }
+  .impact { display: flex; flex-wrap: wrap; gap: 8px; }
+  .impact .badge {
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    color: var(--green); font-size: 0.8rem; font-weight: 600;
+    padding: 4px 10px; border-radius: 8px;
+  }
+  .project .link { font-size: 0.9rem; font-weight: 600; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .contact-item {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 22px; text-align: center;
+  }
+  .contact-item .icon { font-size: 1.6rem; }
+  .contact-item .lbl { color: var(--muted); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
+  .contact-item .val { margin-top: 4px; font-weight: 600; font-size: 1rem; word-break: break-word; }
+
+  footer {
+    border-top: 1px solid var(--card-border);
+    padding: 28px 0; text-align: center; color: var(--muted); font-size: 0.88rem;
+  }
+
+  @media (max-width: 560px) {
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">J<span>AS</span></div>
+    <div class="nav-links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="avatar">JAS</div>
+  <h1>José Andrés Sequeira Hernández</h1>
+  <span class="role">Data / BI / Operations Analyst</span>
+  <p class="tagline">
+    Convierto datos operativos en decisiones medibles: automatizo lo que hace perder
+    tiempo a la empresa y construyo soluciones de datos e IA, de principio a fin.
+  </p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+    <a class="btn btn-ghost" href="#contacto">Contáctame</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="metrics">
+    <div class="metric"><div class="num">500+</div><div class="label">reservas/día procesadas</div></div>
+    <div class="metric"><div class="num">10+ h</div><div class="label">ahorradas por semana</div></div>
+    <div class="metric"><div class="num">2h → 15m</div><div class="label">generación de reportes</div></div>
+    <div class="metric"><div class="num">4.600+</div><div class="label">reservas analizadas con ML</div></div>
+    <div class="metric"><div class="num">30+</div><div class="label">medidas DAX</div></div>
+    <div class="metric"><div class="num">95%+</div><div class="label">satisfacción del cliente</div></div>
+  </div>
+</div>
+
+<section id="sobre-mi" class="wrap">
+  <div class="section-head">
+    <div class="kicker">Sobre mí</div>
+    <h2>Analista de datos que construye soluciones</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-card">
+      <p>
+        Combino dos cosas que no suelen ir juntas: <strong>analizo datos a nivel profesional</strong>
+        y <strong>construyo soluciones reales con tecnología</strong>, desde pipelines de datos
+        hasta un videojuego 3D y aplicaciones con inteligencia artificial.
+      </p>
+      <p>
+        Hoy trabajo como <strong>Data/BI/Operations Analyst en Grupo ANC</strong> (Alamo / Enterprise / National)
+        en el aeropuerto SJO, dentro de una operación 24/7 que procesa <strong>500+ reservas diarias</strong>.
+        Ahí vi la fricción manual — 2 horas de reportes diarios, 10+ horas de tareas repetitivas por semana —
+        y la eliminé con Python, SQL y n8n.
+      </p>
+      <p>
+        Hago las cosas de punta a punta: entiendo el problema del negocio, modelo los datos,
+        construyo el dashboard o el modelo de machine learning, y traduzco todo en resultados medibles.
+        Bilingüe (ES/EN), con certificaciones de Cisco y Google, y licenciatura en Mercadeo en curso.
+      </p>
+      <div class="skills">
+        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Power BI</span>
+        <span class="chip">DAX</span><span class="chip">ETL</span><span class="chip">pandas</span>
+        <span class="chip">scikit-learn</span><span class="chip">Machine Learning</span>
+        <span class="chip">n8n</span><span class="chip">VBA</span><span class="chip">MySQL</span>
+        <span class="chip">DuckDB</span><span class="chip">Modelado de datos</span><span class="chip">Git</span>
+        <span class="chip">Godot</span><span class="chip">IA aplicada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" class="wrap">
+  <div class="section-head">
+    <div class="kicker">Proyectos</div>
+    <h2>Resultados con impacto medible</h2>
+  </div>
+  <div class="projects">
+
+    <div class="project">
+      <div class="icon">📊</div>
+      <h3>Power BI Rental Dashboard</h3>
+      <p class="desc">Dashboard ejecutivo que convierte 4.600+ reservas en KPIs de No-Show y revenue (modelo estrella, 30+ medidas DAX, Power Query).</p>
+      <div class="impact">
+        <span class="badge">Adoptado por gerencia</span>
+        <span class="badge">Visibilidad ejecutiva</span>
+      </div>
+      <a class="link" href="https://github.com/JoseAn03/powerbi-rental-dashboard" target="_blank" rel="noopener">Ver en GitHub →</a>
+    </div>
+
+    <div class="project">
+      <div class="icon">⚙️</div>
+      <h3>GamePlan Automation (ETL)</h3>
+      <p class="desc">Pipeline ETL de punta a punta que eliminó 2 horas diarias de trabajo manual sobre 500+ registros (Python, VBA, pandas, n8n).</p>
+      <div class="impact">
+        <span class="badge">−2h diarias</span>
+        <span class="badge">500+ registros</span>
+      </div>
+      <a class="link" href="https://github.com/JoseAn03/ProyectosSQL" target="_blank" rel="noopener">Ver en GitHub →</a>
+    </div>
+
+    <div class="project">
+      <div class="icon">🧠</div>
+      <h3>No-Show Prediction Model</h3>
+      <p class="desc">Modelo de machine learning que puntúa reservas según riesgo de no-show: 11 variables, ROC AUC y matriz de confusión (scikit-learn).</p>
+      <div class="impact">
+        <span class="badge">4.600+ reservas</span>
+        <span class="badge">11 variables</span>
+        <span class="badge">ROC AUC</span>
+      </div>
+      <a class="link" href="https://github.com/JoseAn03/ml-noshow-prediction" target="_blank" rel="noopener">Ver en GitHub →</a>
+    </div>
+
+    <div class="project">
+      <div class="icon">🗂️</div>
+      <h3>Decision Intelligence SQL</h3>
+      <p class="desc">Framework analítico de 4 capas que convierte datos del aeropuerto en insights ejecutivos (SQL, DuckDB, CTEs, window functions).</p>
+      <div class="impact">
+        <span class="badge">Análisis self-serve</span>
+        <span class="badge">Modelo de 4 capas</span>
+      </div>
+      <a class="link" href="https://github.com/JoseAn03/sql-decision-intelligence" target="_blank" rel="noopener">Ver en GitHub →</a>
+    </div>
+
+    <div class="project">
+      <div class="icon">🎮</div>
+      <h3>ODEALAND</h3>
+      <p class="desc">RPG 3D educativo completo en Godot 4.7: 8 mundos, misiones de un playbook de 45 días, jefes con preguntas de datos, audio y caminos de energía.</p>
+      <div class="impact">
+        <span class="badge">8 mundos</span>
+        <span class="badge">45 misiones</span>
+        <span class="badge">APK + releases</span>
+      </div>
+      <a class="link" href="https://github.com/JoseAn03/odealand" target="_blank" rel="noopener">Ver en GitHub →</a>
+    </div>
+
+    <div class="project">
+      <div class="icon">🚀</div>
+      <h3>ODEA — PWA gamificada</h3>
+      <p class="desc">App web progresiva gamificada para ejecutar un plan de datos e IA ("Operación Dominio de Datos e IA"), con campañas, misiones y recompensas.</p>
+      <div class="impact">
+        <span class="badge">PWA instalable</span>
+        <span class="badge">Campañas + misiones</span>
+      </div>
+      <a class="link" href="https://github.com/JoseAn03/plan-analista-datos" target="_blank" rel="noopener">Ver en GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto" class="wrap">
+  <div class="section-head">
+    <div class="kicker">Contacto</div>
+    <h2>Hablemos</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="icon">📧</div>
+      <div class="lbl">Email</div>
+      <a class="val" href="mailto:chomita0317@gmail.com">chomita0317@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <div class="icon">📱</div>
+      <div class="lbl">Teléfono / WhatsApp</div>
+      <a class="val" href="https://wa.me/50684043736" target="_blank" rel="noopener">+506 8404 3736</a>
+    </div>
+    <div class="contact-item">
+      <div class="icon">💼</div>
+      <div class="lbl">LinkedIn</div>
+      <a class="val" href="https://linkedin.com/in/joseandres-sequeira" target="_blank" rel="noopener">in/joseandres-sequeira</a>
+    </div>
+    <div class="contact-item">
+      <div class="icon">🐙</div>
+      <div class="lbl">GitHub</div>
+      <a class="val" href="https://github.com/JoseAn03" target="_blank" rel="noopener">github.com/JoseAn03</a>
+    </div>
+    <div class="contact-item">
+      <div class="icon">📍</div>
+      <div class="lbl">Ubicación</div>
+      <div class="val">Santa Bárbara, Heredia, Costa Rica</div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  © 2026 José Andrés Sequeira Hernández · Data / BI / Operations Analyst
+</footer>
+
+</body>
+</html>
